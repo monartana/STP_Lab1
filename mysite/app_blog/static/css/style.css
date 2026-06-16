@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient(rgba(245, 247, 250, 0.88), rgba(219, 234, 254, 0.88)),
+                url("../images/карпати.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: navy;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #222;
+}
+
+.container {
+    background-color: white;
+    padding: 35px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.list-group-item {
+    font-size: 18px;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.list-group-item:hover {
+    background-color: #eef5ff;
+    transition: 0.3s;
+}
+
+.article-block {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: navy;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
