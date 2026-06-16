@@ -9,13 +9,22 @@ class Category(models.Model):
         max_length=250,
         help_text='Максимум 250 символів'
     )
+    slug = models.SlugField('Слаг')
+    objects = models.Manager()
 
     class Meta:
-        verbose_name = 'Категорія для новини'
-        verbose_name_plural = 'Категорії для новин'
+        verbose_name = 'Категорія для публікації'
+        verbose_name_plural = 'Категорії для публікацій'
 
     def __str__(self):
         return self.category
+
+    def get_absolute_url(self):
+        try:
+            url = reverse('articles-category-list', kwargs={'slug': self.slug})
+        except Exception:
+            url = "/"
+        return url
 
 
 class Article(models.Model):
@@ -39,11 +48,12 @@ class Article(models.Model):
     main_page = models.BooleanField(
         'Головна',
         default=False,
-        help_text='Показувати'
+        help_text='Показувати на головній сторінці'
     )
+
     category = models.ForeignKey(
         Category,
-        related_name='news',
+        related_name='articles',
         blank=True,
         null=True,
         verbose_name='Категорія',

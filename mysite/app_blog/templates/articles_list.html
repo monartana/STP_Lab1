@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список статей</title>
+</head>
+<body>
+
+<h1>Список статей</h1>
+
+{% if category %}
+    <h2>Категорія: {{ category.category }}</h2>
+{% endif %}
+
+<ul>
+{% for item in items %}
+    <li>
+        <a href="{{ item.get_absolute_url }}">
+            {{ item.title }}
+        </a>
+    </li>
+{% empty %}
+    <li>Статті відсутні</li>
+{% endfor %}
+</ul>
+
+<a href="/">На головну</a>
+
+</body>
+</html>

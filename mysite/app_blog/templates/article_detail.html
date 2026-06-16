@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ item.title }}</title>
+</head>
+<body>
+
+<h1>{{ item.title }}</h1>
+
+<p>{{ item.description }}</p>
+
+<p>
+    Категорія:
+    {% if item.category %}
+        {{ item.category }}
+    {% endif %}
+</p>
+
+<p>
+    Дата публікації:
+    {{ item.pub_date }}
+</p>
+
+{% include 'fotorama.html' %}
+
+<a href="/">На головну</a>
+
+</body>
+</html>
